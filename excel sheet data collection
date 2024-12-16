@@ -1,0 +1,9 @@
+import pandas as pd
+import numpy as np
+file = r"C:\Users\punya mittal\Downloads\boston1.xls"
+x1 = pd.ExcelFile(file,engine="xlrd")
+print(x1.sheet_names)
+df1=x1.parse("Sheet1")
+print(df1)
+df1=x1.parse("Sheet2")
+print(df1)
