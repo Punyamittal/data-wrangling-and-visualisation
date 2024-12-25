@@ -1,0 +1,9 @@
+#pip install lxml html5lib beautifulsoup4
+import pandas as pd
+import numpy as np
+uss=pd.read_html("https://en.wikipedia.org/wiki/Maharana_Pratap")
+u=uss[0]
+print(u)
+
+
+
