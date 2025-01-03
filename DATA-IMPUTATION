@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+d=pd.read_csv("C:\\Users\\punya mittal\\Downloads\\pima-indians-diabetes.csv",header=None)
+print(d.head())#finding data
+#computing how many zeroes are there in 8 coloums
+print((d[[1,2,3,4,5,6,7,8]]==0).sum())
+#marking 0 values as NaN
+d[[1,2,3,4,5,6,7,8]]=d[[1,2,3,4,5,6,7,8]].replace(0,np.nan)
+print(d.head)
+#visualising missing data
+import missingno as msno
+import matplotlib
+%matplotlib inline
+#visualising missing data
+import missingno as msno
+import matplotlib
+missingdata_df=d.columns[d.isnull().any()].tolist()#get coloums with missing values
+msno.matrix(d[missingdata_df])
+msno.bar(d[missingdata_df],color="blue", figsize=(30,18))
+plt.show()#specillay calls the plot in IDLE
